@@ -1262,7 +1262,7 @@
                 });
             }
         }
-
+   
         function copyToClipboard() {
             navigator.clipboard.writeText(window.location.href);
             alert("Link copied to clipboard! Share it anywhere. ✨");
@@ -1275,6 +1275,15 @@
       audio.play().catch(function(error) {
         console.log("Audio play error:", error);
       });
+    }
+  }, { once: true });
+</script>
+        <script>
+  // Automatically plays the music on the very first click/tap anywhere on the screen
+  document.addEventListener('click', function() {
+    const audio = document.getElementById('myAudio');
+    if (audio && audio.paused) {
+      audio.play().catch(err => console.log("Playback error:", err));
     }
   }, { once: true });
 </script>
