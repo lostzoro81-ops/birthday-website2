@@ -1267,6 +1267,16 @@
             navigator.clipboard.writeText(window.location.href);
             alert("Link copied to clipboard! Share it anywhere. ✨");
         }
-    </script>
+    </script><script>
+  // Plays the song as soon as the user taps or clicks anywhere on the site
+  document.addEventListener('click', function() {
+    const audio = document.getElementById('myAudio');
+    if (audio && audio.paused) {
+      audio.play().catch(function(error) {
+        console.log("Audio play error:", error);
+      });
+    }
+  }, { once: true });
+</script>
 </body>
 </html>
